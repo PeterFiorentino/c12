@@ -4,7 +4,7 @@ import Submit from './Components/Submit'
 import NavBar from './Components/NavBar'
 import About from './Components/About'
 import Contact from './Components/Contact'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
       <header className="App-header">
         <div id="flexDiv">
           <NavBar></NavBar>
-          <Switch>
-            <Route exact path="/" component={About}/>        
-            <Route exact path="/submit" component={Submit}/>
-            <Route exact path="/contact" component={Contact}/>           
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<About />}/>        
+            <Route path="submit/*" element={<Submit />}/>
+            <Route path="contact/*" element={<Contact />}/>           
+          </Routes>
         </div>
       </header>
     </div>
