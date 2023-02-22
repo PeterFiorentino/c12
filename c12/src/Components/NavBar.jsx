@@ -10,7 +10,7 @@ class NavBar extends React.Component{
     render() {
         return (
             <div id="navBar">
-                <img id="C12Logo" src={logo}></img>
+                <img id="C12Logo" src={logo} alt="logo"></img>
                 <div id="NavBar-page">
                     <Link to="submit" className="navBarLinks">Submit</Link>
                     <Link to="/" className="navBarLinks">About The Contest</Link>

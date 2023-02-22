@@ -7,7 +7,7 @@ class About extends React.Component {
         return (
             <div className="contestAbout">
                 <div id="abuotContestTeam">
-                    <img src={team} id="teamPic"></img>
+                    <img src={team} id="teamPic" alt="team"></img>
                     <h2>The Inspiration</h2>
                     <div>
                         <p className="aboutText">
