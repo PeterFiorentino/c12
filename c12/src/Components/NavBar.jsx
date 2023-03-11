@@ -13,8 +13,8 @@ class NavBar extends React.Component{
                 <img id="C12Logo" src={logo} alt="logo"></img>
                 <div id="NavBar-page">
                     <Link to="submit" className="navBarLinks">Submit</Link>
-                    <Link to="/" className="navBarLinks">About The Contest</Link>
-                    {/* <Link to="/news" className="navBarLinks">News</Link> */}
+                    <Link to="/" className="navBarLinks">The Contest</Link>
+                    <Link to="rules" className="navBarLinks">Rules & Guidelines</Link>                   
                     <Link to="contact" className="navBarLinks">Contact Us</Link>
                 </div>
             </div>

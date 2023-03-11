@@ -6,6 +6,7 @@ class Submit extends React.Component {
     constructor(){
         super()
         this.state = {
+            title: "",
             contestant_name: "",
             contestant_email: "",
             genre: "",
@@ -15,6 +16,10 @@ class Submit extends React.Component {
         }
     }
 
+
+    changeTitle = (e) => {
+        this.setState({ title: e.target.value})
+    }
 
     changeContestantName = (e) => {
         this.setState({ contestant_name: e.target.value})
@@ -39,9 +44,10 @@ class Submit extends React.Component {
     handleSubmit = (event) => {
         const templateId = 'template_r8im1mh';
     
-        this.sendFeedback(templateId, {log_line: this.state.log_line, from_name: this.state.contestant_name, reply_to: this.state.contestant_email, genre: this.state.genre, page_length: this.state.page_length})
+        this.sendFeedback(templateId, {title: this.state.title, log_line: this.state.log_line, from_name: this.state.contestant_name, reply_to: this.state.contestant_email, genre: this.state.genre, page_length: this.state.page_length})
 
         this.setState({
+            title: "",
             contestant_name: "",
             contestant_email: "",
             log_line: "",
@@ -69,7 +75,8 @@ class Submit extends React.Component {
                 
                     <div>
                         <form id="round2form" onSubmit={this.addCustomer}>
-                            <input type="text" placeholder="Name" value={this.state.contestant_name} onChange={this.changeContestantName} className="purchaseBox"></input>
+                            <input type="text" placeholder="Title" value={this.state.title} onChange={this.changeTitle} className="purchaseBox"></input>
+                            <input type="text" placeholder="Writer(s)" value={this.state.contestant_name} onChange={this.changeContestantName} className="purchaseBox"></input>
                             <input type="text" placeholder="Email" value={this.state.contestant_email} onChange={this.changeContestantEmail} className="purchaseBox"></input>
                             <input type="text" placeholder="Log Line" value={this.state.log_line} onChange={this.changeLogLine} className="purchaseBox"></input>
                             <input type="text" placeholder="Genre" value={this.state.genre} onChange={this.changeGenre} className="purchaseBox"></input>
